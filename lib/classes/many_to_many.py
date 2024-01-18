@@ -18,7 +18,6 @@ class Coffee:
     def orders(self):
         return [order for order in Order.all if order.coffee is self]
     
-    
     def customers(self):
         return list({order.customer for order in self.orders()})
     
@@ -53,9 +52,7 @@ class Customer:
     def create_order(self, new_coffee, new_price):
         return Order(self, new_coffee, new_price)
     
-    # @classmethod 
-    # def most_aficianado(cls, coffee):
-    #     pass
+
     
 class Order:
     all = []
