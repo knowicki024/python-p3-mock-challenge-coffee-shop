@@ -20,8 +20,4 @@ o1 = Order(cust1, c_2, 7.6)
 o2 = Order(cust3, c_1, 8.2)
 o3 = Order(cust2, c_3, 9.2)
 
-
-
-
-
 ipdb.set_trace()

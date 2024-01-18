@@ -1,4 +1,3 @@
-from statistics import mean
 
 class Coffee:
     all = []
@@ -16,18 +15,16 @@ class Coffee:
             self._name = name
         
     def orders(self):
-        return [order for order in Order.all if order.coffee is self]
-    
+        pass
     
     def customers(self):
-        return list({order.customer for order in self.orders()})
+        pass
     
     def num_orders(self):
-        return len(self.orders())
+        pass
     
     def average_price(self):
-        return mean([order.price for order in self.orders()])
-        
+        pass
 
 class Customer:
     all = []
@@ -45,18 +42,18 @@ class Customer:
             self._name = name
         
     def orders(self):
-        return [order for order in Order.all if order.customer is self]
+        pass
     
     def coffees(self):
-        return list({order.coffee for order in self.orders()})
+        pass
     
-    def create_order(self, new_coffee, new_price):
-        return Order(self, new_coffee, new_price)
+    def create_order(self, coffee, price):
+        pass
     
     # @classmethod 
     # def most_aficianado(cls, coffee):
     #     pass
-    
+
 class Order:
     all = []
     def __init__(self, customer, coffee, price):
