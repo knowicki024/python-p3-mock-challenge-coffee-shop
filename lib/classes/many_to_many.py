@@ -16,16 +16,16 @@ class Coffee:
             self._name = name
         
     def orders(self):
-        pass
+        return [order for order in Order.all if order.coffee is self]
     
     def customers(self):
-        pass
+        return list ({order.customer for order in self.orders()})
     
     def num_orders(self):
-        pass
+        return len(self.orders())
     
     def average_price(self):
-        pass
+        return mean([order.price for order in self.orders()])
 
 class Customer:
     all = []
@@ -43,13 +43,13 @@ class Customer:
             self._name = name
         
     def orders(self):
-        pass
+        return [order for order in Order.all if order.customer is self]
     
     def coffees(self):
-        pass
+        return list({order.coffee for order in self.orders()})
     
     def create_order(self, coffee, price):
-        pass
+        return Order(self, coffee, price)
     
 
     
